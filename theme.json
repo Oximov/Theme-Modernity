@@ -1,0 +1,10 @@
+{
+    "id": "modernity",
+    "name": "Modernity",
+    "version": "0.0.1",
+    "description": "Theme moderne reprenant le theme Carbon",
+    "url" : "https://github.com/Oximov",
+    "authors": [
+        "Oximov"
+    ]
+}
