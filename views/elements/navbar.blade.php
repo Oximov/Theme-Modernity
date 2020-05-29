@@ -22,12 +22,12 @@
                         </li>
                     @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown{{ $element->id }}"  class="nav-link dropdown-toggle font-link"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a id="navbarDropdown{{ $element->id }}"  class="nav-link dropdown-toggle font-link"  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"   style="color: #ffffff; text-transform: initial; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 700;">
                                 {{ $element->name }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown{{ $element->id }}">
                                 @foreach($element->elements as $childElement)
-                                    <a class="dropdown-item font-link" href="{{ $childElement->getLink() }}" @if($element->new_tab) target="_blank" rel="noopener" @endif>{{ $childElement->name }}</a>
+                                    <a class="dropdown-item font-link"   style="color: black; text-transform: initial; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 700;" href="{{ $childElement->getLink() }}" @if($element->new_tab) target="_blank" rel="noopener" @endif>{{ $childElement->name }}</a>
                                 @endforeach
                             </div>
                         </li>

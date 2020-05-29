@@ -88,13 +88,13 @@
                     </thead>
                     <tbody>
                     @isset($votes)
+                    @foreach($votes as $id => $vote)
                         <tr>
-                            @foreach($votes as $id => $vote)
-                            <td scope="row">#{{ $vote['user']->id }}</td>
+                            <th scope="row">#{{ $vote['user']->id }}</th>
                             <td>{{ $vote['user']->name }}</td>
                             <td>{{ $vote['votes'] }} votes</td>
-                            @endforeach
                         </tr>
+                    @endforeach
                     @endisset
 
                     </tbody>
