@@ -91,7 +91,7 @@
                     @foreach($votes as $id => $vote)
                         <tr>
                             <th scope="row">#{{ $vote['user']->id }}</th>
-                            <td>{{ $vote['user']->name }}</td>
+                            <td><img src="https://minotar.net/helm/{{ $vote['user']->name }}/100.png" width="20px"> </img> {{ $vote['user']->name }}</td>
                             <td>{{ $vote['votes'] }} votes</td>
                         </tr>
                     @endforeach

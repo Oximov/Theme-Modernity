@@ -60,29 +60,38 @@
 
             </tbody>
         </table>
+        
+        @if($server)
+            @if(theme_config('use_play_button') !== 'on')
+                @if(display_rewards())
+                    <h2 class="vote-title">{{ trans('vote::messages.sections.rewards') }}</h2>
 
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">{{ trans('messages.fields.name') }}</th>
+                            <th scope="col">{{ trans('vote::messages.fields.chances') }}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        @foreach($rewards as $reward)
+                            <tr>
+                                <th scope="row">{{ $reward->name }}</th>
+                                <td>{{ $reward->chances }} %</td>
+                            </tr>
+                        @endforeach
+
+                        </tbody>
+                    </table>
+                @endif
+            @else
+            <div>
+                <h5 class="vote-title" style="text-align: center;">{{ trans('theme::modernity.config.show_rewards') }}</h5>
+                <h6 style="text-align: center;"></h6>
+            </div>
+        @endif
         <br>
-        @if(display_rewards())
-            <h2 class="vote-title">{{ trans('vote::messages.sections.rewards') }}</h2>
-
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">{{ trans('messages.fields.name') }}</th>
-                    <th scope="col">{{ trans('vote::messages.fields.chances') }}</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                @foreach($rewards as $reward)
-                    <tr>
-                        <th scope="row">{{ $reward->name }}</th>
-                        <td>{{ $reward->chances }} %</td>
-                    </tr>
-                @endforeach
-
-                </tbody>
-            </table>
         @endif
 
     </div>

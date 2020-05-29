@@ -7,19 +7,30 @@
         <div class="card-body">
             <form action="{{ route('admin.themes.config', $theme) }}" method="POST">
                 @csrf
+                
 
-                <div class="form-group">
-                    <label for="colorSelect">{{ trans('theme::modernity.config.color') }}</label>
-                    <select class="custom-select @error('color') is-invalid @enderror" id="colorSelect" name="color">
-                        @foreach(['red', 'blue', 'green', 'purple', 'orange', 'yellow', 'aqua', 'pink'] as $color)
-                            <option value="{{ $color }}" @if(theme_config('color') === $color) selected @endif>{{ trans('theme::modernity.colors.'.$color) }}</option>
-                        @endforeach
-                    </select>
+                @php $usePlayButton = old('use_play_button', theme_config('use_play_button')) === 'on' @endphp
 
-                    @error('color')
-                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                    @enderror
+                <div class="form-group custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="playButtonSwitch" name="use_play_button" data-toggle="collapse" data-target="#playButtonGroup" @if($usePlayButton) checked @endif>
+                    <label class="custom-control-label" for="playButtonSwitch">{{ trans('theme::modernity.config.use_rewards_display') }}</label>
                 </div>
+
+                    
+
+                <div id="playButtonGroup" class="{{ $usePlayButton ? 'show' : 'collapse' }}">
+                    <div class="card card-body mb-2">
+                        <div class="form-group">
+                            <label for="playButtonLink">{{ trans('theme::prism.config.play_button_link') }}</label>
+                            <input type="text" class="form-control @error('play_button_link') is-invalid @enderror" id="playButtonLink" name="play_button_link" value="{{ old('play_button_link', theme_config('play_button_link')) }}">
+
+                            @error('play_button_link')
+                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+
 
                 <div class="form-group">
                     <label for="discordInput">{{ trans('theme::modernity.config.discord') }}</label>

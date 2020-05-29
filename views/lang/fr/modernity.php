@@ -17,5 +17,6 @@ return [
         'color' => 'Couleurs du thème',
         'rank' => 'Grade',
         'show_rewards' => 'La liste des récompenses est désactivée',
+        'register_date' => 'Inscrit le',
     ],
 ];
