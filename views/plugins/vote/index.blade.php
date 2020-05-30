@@ -87,8 +87,7 @@
                 @endif
             @else
             <div>
-                <h5 class="vote-title" style="text-align: center;">{{ trans('theme::modernity.config.show_rewards') }}</h5>
-                <h6 style="text-align: center;"></h6>
+                <p></p>
             </div>
         @endif
         <br>

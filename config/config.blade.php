@@ -16,21 +16,6 @@
                     <label class="custom-control-label" for="playButtonSwitch">{{ trans('theme::modernity.config.use_rewards_display') }}</label>
                 </div>
 
-                    
-
-                <div id="playButtonGroup" class="{{ $usePlayButton ? 'show' : 'collapse' }}">
-                    <div class="card card-body mb-2">
-                        <div class="form-group">
-                            <label for="playButtonLink">{{ trans('theme::prism.config.play_button_link') }}</label>
-                            <input type="text" class="form-control @error('play_button_link') is-invalid @enderror" id="playButtonLink" name="play_button_link" value="{{ old('play_button_link', theme_config('play_button_link')) }}">
-
-                            @error('play_button_link')
-                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-
 
                 <div class="form-group">
                     <label for="discordInput">{{ trans('theme::modernity.config.discord') }}</label>
@@ -69,6 +54,10 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> {{ trans('messages.actions.save') }}</button>
+                             
+
+                <div id="playButtonGroup" class="{{ $usePlayButton ? 'show' : 'collapse' }}">
+                </div>
             </form>
         </div>
     </div>

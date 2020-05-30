@@ -14,8 +14,8 @@ return [
         'shopsuccess' => 'Félicitation',
         'shopbuytext' => 'Le paiement est confirmer. Vous recevrez votre achat dans quelques minutes.',
         'theme' => 'Thème par ',
-        'color' => 'Couleurs du thème',
         'rank' => 'Grade',
-        'show_rewards' => 'La liste des récompenses est désactivée',
+        'use_rewards_display' => 'Activer l\'affichage des récompense de vote',
+        'register_date' => 'Inscrit le',
     ],
 ];

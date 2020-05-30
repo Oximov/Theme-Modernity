@@ -14,9 +14,8 @@ return [
         'shopsuccess' => 'Success',
         'shopbuytext' => 'Your payment has been completed. You will receive your purchase in few minutes.',
         'theme' => 'Theme by',
-        'color' => 'Color of the theme',
         'rank' => 'Rank',
         'use_rewards_display' => 'Show the vote rewards list',
-        'show_rewards' => 'Rewards list is disabled',
+        'register_date' => 'Register on',
     ],
 ];

@@ -28,8 +28,8 @@
         <div class="content mb-4">
             <h5 style="text-align: center;"><img src="https://minotar.net/helm/{{ $user->name }}/100.png" width="35px"> </img> {{ $user->name }}</h5>
             <ul>
-                <li>Grade : {{ $user->role->name }}</li>
-                <li>Inscrit le : {{ format_date($user->created_at, true) }}</li>
+                <li>{{ trans('theme::modernity.config.rank') }} : {{ $user->role->name }}</li>
+                <li>{{ trans('theme::modernity.config.register_date') }} : {{ format_date($user->created_at, true) }}</li>
                 <li>{{ trans('messages.profile.info.2fa', ['2fa' => trans_bool($user->hasTwoFactorAuth())]) }}</li>
             </ul>
 
