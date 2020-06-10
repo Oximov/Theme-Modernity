@@ -28,6 +28,8 @@
 @endphp
 @endplugin
 
+
+
 @section('content')
     <div class="home-background mb-4 p-4" style="background: url('{{ setting('background') ? image_url(setting('background')) : 'https://via.placeholder.com/2000x500' }}') no-repeat center; background-size: cover">
         <div class="container h-100">
@@ -81,18 +83,16 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">{{ trans('theme::modernity.config.pseudo') }}</th>
-                            <th scope="col">{{ trans('theme::modernity.config.nbr') }}</th>
+                            <th style="text-align: center;" scope="col">{{ trans('theme::modernity.config.pseudo') }}</th>
+                            <th style="text-align: center;" scope="col">{{ trans('theme::modernity.config.nbr') }}</th>
                         </tr>
                     </thead>
                     <tbody>
                     @isset($votes)
                     @foreach($votes as $id => $vote)
                         <tr>
-                            <th scope="row">#{{ $vote['user']->id }}</th>
-                            <td><img src="https://minotar.net/helm/{{ $vote['user']->name }}/100.png" width="20px"> </img> {{ $vote['user']->name }}</td>
-                            <td>{{ $vote['votes'] }} votes</td>
+                            <td style="text-align: center;"><img src="https://minotar.net/helm/{{ $vote['user']->name }}/100.png" width="20px"> </img> {{ $vote['user']->name }}</td>
+                            <td style="text-align: center;">{{ $vote['votes'] }} votes</td>
                         </tr>
                     @endforeach
                     @endisset
